@@ -1,20 +1,18 @@
 document.getElementById("myForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Prevent form submission
     
-
+    // Get form data
     var email = document.getElementById("exampleInputEmail1").value;
     var password = document.getElementById("exampleInputPassword1").value;
     var isChecked = document.getElementById("exampleCheck1").checked;
 
-   
-    var displayDiv = document.getElementById("displayData");
-    displayDiv.innerHTML = "<h2>Form Data</h2>" +
-                            "<p>Email: " + email + "</p>" +
+    // Update modal content with form data
+    var modalBody = document.getElementById("modalBody");
+    modalBody.innerHTML = "<p>Email: " + email + "</p>" +
                             "<p>Password: " + password + "</p>" +
                             "<p>Checkbox Checked: " + isChecked + "</p>";
 
-    
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Checkbox Checked:", isChecked);
+    // Show the modal
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.show();
 });
